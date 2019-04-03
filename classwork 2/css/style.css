@@ -1,0 +1,15 @@
+.chat{
+    min-height: 100px;
+}
+.left, .right{
+    border: 1px solid #ababab;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ababab;
+    color: white;
+    font-weight: bold;
+}
+.right{
+    text-align: right;
+}

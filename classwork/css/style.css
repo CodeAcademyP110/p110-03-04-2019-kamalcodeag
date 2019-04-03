@@ -1,0 +1,13 @@
+.main-menu li{
+    transition: all 0.3s ease-in-out;
+}
+.main-menu li:hover{
+    background-color: #343a40;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.main-menu li i:hover{
+    color: #dc3545;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
