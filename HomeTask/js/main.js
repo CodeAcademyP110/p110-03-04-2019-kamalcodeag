@@ -12,22 +12,30 @@ userInput.onkeydown = function (e)
         let inputValue = userInput.value.trim();
         let tag = document.createElement("span");
         let icon = document.createElement("i");
-
+        
         if(inputValue !== "")
         {
+
+            let allTags = document.querySelectorAll(".spec-style");
+            let foundTag = Array.from(allTags).find(el => el.innerHTML === inputValue);
+            
+            if(foundTag !== undefined)
+            {
+               parent.insertBefore(foundTag, userInput);
+               userInput.value = "";
+               return;
+            }
+
             tag.innerHTML = inputValue;
             tag.className = "spec-style";
             icon.className = "far fa-times-circle spec-icon";
-            parent.appendChild(tag);
+            // parent.appendChild(tag);
+            parent.insertBefore(tag, userInput);
             tag.appendChild(icon);
+            userInput.value = "";
         }
 
-        let parentTags = Array.from(parent.children).find(tag => tag.innerHTML === inputValue);
         
-        if(parentTags !== undefined)
-        {
-           return;
-        }
 
         icon.onclick = function()
         {
